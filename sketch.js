@@ -1,3 +1,4 @@
+//Andy St. Jean
 
 var pnt;
 var pnts = [];
@@ -20,7 +21,7 @@ function setup()
 function draw()
 {
   background(115);
-  
+
   for(var i = 0; i < pnts.length; i++)
   {
     pnts[i].update();
