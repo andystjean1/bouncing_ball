@@ -4,18 +4,14 @@ var pnt;
 var pnts = [];
 
 var gravity;
-var boost;
-
-var red = 255;
-var green = 0;
 
 function setup()
 {
-  createCanvas(500, 300);
+  createCanvas(700, 500);
   gravity = createVector(0, 0.2);
   boost = createVector(0, -0.8);
-  stroke(255, 0, 0);
-  fill(255, 255,  0);
+  stroke(0, 255, 0);
+  fill(0, 255,  0);
 }
 
 function draw()
@@ -28,11 +24,17 @@ function draw()
     pnts[i].show();
   }
 
-  if(pnts.length > 50) {
+ if(pnts.length > 10) {
     pnts.splice(0, 1);
   }
 }
 
 function mousePressed() {
-  pnts.push(new Particle(0, mouseY, 5));
+  if(mouseX < width/2) {
+    pnts.push(new Particle(20, mouseY, random(5, 19)));
+  }
+
+  else {
+    pnts.push(new Particle( width - 20, mouseY, random(5, 19)));
+  }
 }
